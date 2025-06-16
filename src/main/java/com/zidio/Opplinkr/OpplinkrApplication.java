@@ -9,5 +9,4 @@ public class OpplinkrApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OpplinkrApplication.class, args);
 	}
-
 }

@@ -5,8 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.zidio.Opplinkr.Entity.StudentProfile;
 
+import java.util.Optional;
+
 @Repository
 public interface StudentRepo extends JpaRepository<StudentProfile, Long>{
 
+    Optional<StudentProfile> findByUserId(Long userId);
 	
 }

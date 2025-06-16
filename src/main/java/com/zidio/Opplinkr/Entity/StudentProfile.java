@@ -1,9 +1,9 @@
 package com.zidio.Opplinkr.Entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,19 +11,16 @@ import jakarta.persistence.Table;
 public class StudentProfile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long studentId;
 	private Long userId;
+	@OneToOne
+	@MapsId
+	private Users user;
+	private String university;
+	private String degree;
+	private Integer yearOfStudy;
 	private String resumeUrl;
-	private String education;
 	private String skill;
 	
-	public Long getStudentId() {
-		return studentId;
-	}
-	public void setStudentId(Long studentId) {
-		this.studentId = studentId;
-	}
 	public Long getUserId() {
 		return userId;
 	}
@@ -36,17 +33,35 @@ public class StudentProfile {
 	public void setResumeUrl(String resumeUrl) {
 		this.resumeUrl = resumeUrl;
 	}
-	public String getEducation() {
-		return education;
-	}
-	public void setEducation(String education) {
-		this.education = education;
-	}
 	public String getSkill() {
 		return skill;
 	}
 	public void setSkill(String skill) {
 		this.skill = skill;
+	}
+	public Users getUser() {
+		return user;
+	}
+	public void setUser(Users user) {
+		this.user = user;
+	}
+	public String getUniversity() {
+		return university;
+	}
+	public void setUniversity(String university) {
+		this.university = university;
+	}
+	public String getDegree() {
+		return degree;
+	}
+	public void setDegree(String degree) {
+		this.degree = degree;
+	}
+	public Integer getYearOfStudy() {
+		return yearOfStudy;
+	}
+	public void setYearOfStudy(Integer yearOfStudy) {
+		this.yearOfStudy = yearOfStudy;
 	}
 
 }

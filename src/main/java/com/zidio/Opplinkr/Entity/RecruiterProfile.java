@@ -1,9 +1,9 @@
 package com.zidio.Opplinkr.Entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -11,34 +11,43 @@ import jakarta.persistence.Table;
 public class RecruiterProfile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long recruiterId;
 	private Long userId;
-	private String company_name;
+	@OneToOne
+	@MapsId
+	private Users user;
+	private String companyName;
 	private String designation;
-	public Long getRecruiterId() {
-		return recruiterId;
-	}
-	public void setRecruiterId(Long recruiterId) {
-		this.recruiterId = recruiterId;
-	}
+	private String companyWebsite;
+	
 	public Long getUserId() {
 		return userId;
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public String getCompany_name() {
-		return company_name;
-	}
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
-	}
 	public String getDesignation() {
 		return designation;
 	}
 	public void setDesignation(String designation) {
 		this.designation = designation;
+	}
+	public Users getUser() {
+		return user;
+	}
+	public void setUser(Users user) {
+		this.user = user;
+	}
+	public String getCompanyWebsite() {
+		return companyWebsite;
+	}
+	public void setCompanyWebsite(String companyWebsite) {
+		this.companyWebsite = companyWebsite;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 	
 }

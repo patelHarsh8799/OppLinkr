@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.zidio.Opplinkr.Entity.RecruiterProfile;
 
+import java.util.Optional;
+
 @Repository
 public interface RecruiterRepo extends JpaRepository<RecruiterProfile, Long> {
+
+    Optional<RecruiterProfile> findByCompanyName(String companyName);
 
 }
