@@ -11,5 +11,6 @@ import java.util.Optional;
 public interface RecruiterRepo extends JpaRepository<RecruiterProfile, Long> {
 
     Optional<RecruiterProfile> findByCompanyName(String companyName);
+    Optional<RecruiterProfile> findByUser_Email(String email);
 
 }

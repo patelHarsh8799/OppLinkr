@@ -1,4 +1,4 @@
-package com.zidio.Opplinkr.dto;
+package com.zidio.Opplinkr.dto.AuthDto;
 
 public class RegisterRequest {
     public String name;

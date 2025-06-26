@@ -2,8 +2,8 @@ package com.zidio.Opplinkr.Service;
 
 import com.zidio.Opplinkr.Entity.Users;
 import com.zidio.Opplinkr.Repositiory.UserRepo;
-import com.zidio.Opplinkr.dto.LoginRequest;
-import com.zidio.Opplinkr.dto.RegisterRequest;
+import com.zidio.Opplinkr.dto.AuthDto.LoginRequest;
+import com.zidio.Opplinkr.dto.AuthDto.RegisterRequest;
 import com.zidio.Opplinkr.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,6 +26,7 @@ public class AuthService {
         users.setEmail(request.email);
         users.setPassword(new BCryptPasswordEncoder().encode(request.password));
         users.setRole(request.role);
+        users.setName(request.name);
         userRepo.save(users);
         return "You have Successfully registered";
     }

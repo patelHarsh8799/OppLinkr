@@ -23,7 +23,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register").permitAll()
+                        .requestMatchers("/api/auth/login" , "api/auth/register", "api/auth/validate").permitAll()
+                        .requestMatchers("api/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(httpBasic -> {})  // Enable HTTP Basic login (or replace with JWT filter)

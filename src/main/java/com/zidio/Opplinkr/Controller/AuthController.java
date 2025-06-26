@@ -1,8 +1,8 @@
 package com.zidio.Opplinkr.Controller;
 
 import com.zidio.Opplinkr.Service.AuthService;
-import com.zidio.Opplinkr.dto.LoginRequest;
-import com.zidio.Opplinkr.dto.RegisterRequest;
+import com.zidio.Opplinkr.dto.AuthDto.LoginRequest;
+import com.zidio.Opplinkr.dto.AuthDto.RegisterRequest;
 import com.zidio.Opplinkr.security.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/auth/")
 public class AuthController {
 
     @Autowired

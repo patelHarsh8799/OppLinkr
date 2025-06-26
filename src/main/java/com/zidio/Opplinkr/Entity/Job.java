@@ -22,7 +22,9 @@ public class Job {
     private String title;
     private String description;
     private String location;
-    private String type; // JOB or INTERNSHIP
+    private String type;
+    private String companyName;
+    private String skill;// JOB or INTERNSHIP
     private boolean remote;
     private LocalDate startDate;
     private int durationWeeks;
@@ -117,4 +119,19 @@ public class Job {
         this.postedAt = postedAt;
     }
 
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getSkill() {
+        return skill;
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
 }
